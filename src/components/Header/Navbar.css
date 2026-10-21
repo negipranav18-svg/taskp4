@@ -1,0 +1,243 @@
+.navbar-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.brand-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #1a202c;
+  display: flex;
+  align-items: center;
+}
+
+.brand-accent {
+  color: var(--primary-color);
+}
+
+.navbar-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-link {
+  color: #4a5568;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.4rem 0.65rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: darkcyan;
+  background-color: #f0fdfa;
+  transform: translateY(-1px);
+}
+
+.navbar-search {
+  flex: 1;
+  max-width: 420px;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.6rem 2.2rem 0.6rem 2.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 9999px;
+  background-color: #f8fafc;
+  font-size: 0.92rem;
+  color: var(--text-dark);
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.15);
+}
+
+.search-clear {
+  position: absolute;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-btn {
+  padding: 0.55rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  border: none;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn-post {
+  background-color: #edf2f7;
+  color: #2d3748;
+}
+
+.btn-post:hover {
+  background-color: #e2e8f0;
+  color: #1a202c;
+}
+
+.btn-login {
+  background-color: #3182ce;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.btn-login:hover {
+  background-color: #2b6cb0;
+  box-shadow: 0 2px 4px rgba(43, 108, 176, 0.25);
+}
+
+.btn-signup {
+  background-color: transparent;
+  color: #3182ce;
+  border: 1px solid #3182ce;
+  text-decoration: none;
+}
+
+.btn-signup:hover {
+  background-color: #ebf8ff;
+}
+
+.auth-nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* User profile styling */
+.user-profile-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.user-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  background-color: #edf2f7;
+  border-radius: 9999px;
+  border: 1px solid #e2e8f0;
+}
+
+.user-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-avatar-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid darkcyan;
+}
+
+.user-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.btn-logout {
+  background-color: transparent;
+  border: 1px solid #cbd5e0;
+  color: #718096;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.85rem;
+}
+
+.btn-logout:hover {
+  background-color: #fff5f5;
+  color: #e53e3e;
+  border-color: #feb2b2;
+}
+
+@media (max-width: 900px) {
+  .navbar-nav-links {
+    gap: 0.5rem;
+  }
+  .nav-link {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .navbar-nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+  }
+  .navbar-search {
+    order: 4;
+    max-width: 100%;
+    width: 100%;
+  }
+}

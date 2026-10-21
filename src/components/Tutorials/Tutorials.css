@@ -1,0 +1,32 @@
+.tutorials-section {
+  background-color: #f8fafc;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tutorial-card {
+  border-left: 4px solid var(--primary-color);
+}
+
+.tutorial-tag {
+  background: rgba(43, 108, 176, 0.85);
+}
+
+.card-meta-username {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.username-prefix {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #a0aec0;
+}
+
+.username-tag {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-family: monospace;
+  font-size: 0.9rem;
+}

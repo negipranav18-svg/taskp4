@@ -1,0 +1,112 @@
+.newsletter-section {
+  background-color: #e2e8f0;
+  border-top: 1px solid #cbd5e0;
+  border-bottom: 1px solid #cbd5e0;
+  padding: 1.5rem;
+}
+
+.newsletter-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.newsletter-form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.newsletter-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #2d3748;
+  white-space: nowrap;
+}
+
+.newsletter-input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  max-width: 480px;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  background-color: #ffffff;
+  color: #2d3748;
+  outline: none;
+}
+
+.newsletter-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(43, 108, 176, 0.2);
+}
+
+.newsletter-button {
+  padding: 0.6rem 1.4rem;
+  background-color: #a0aec0;
+  color: #1a202c;
+  border: 1px solid #718096;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.newsletter-button:hover:not(:disabled) {
+  background-color: #718096;
+  color: #ffffff;
+}
+
+.newsletter-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.newsletter-feedback {
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.newsletter-feedback.success {
+  background-color: #c6f6d5;
+  color: #22543d;
+  border: 1px solid #9ae6b4;
+}
+
+.newsletter-feedback.error {
+  background-color: #fed7d7;
+  color: #742a2a;
+  border: 1px solid #feb2b2;
+}
+
+@media (max-width: 640px) {
+  .newsletter-form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  .newsletter-input-group {
+    max-width: 100%;
+    flex-direction: column;
+  }
+  .newsletter-button {
+    width: 100%;
+  }
+}

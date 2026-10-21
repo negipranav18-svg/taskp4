@@ -1,0 +1,150 @@
+.hero-banner {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.hero-banner:hover .banner-bg-img {
+  transform: scale(1.03);
+}
+
+.banner-overlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 400px;
+  background: linear-gradient(135deg, rgba(15, 32, 54, 0.88) 0%, rgba(13, 27, 42, 0.84) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+
+.hover-message {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: darkcyan;
+  color: #ffffff;
+  text-align: center;
+  padding: 14px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  opacity: 0;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.hover-message.visible,
+.hero-banner:hover .hover-message {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.banner-content {
+  max-width: 800px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.banner-badge {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(4px);
+  color: #e2e8f0;
+  padding: 0.3rem 0.9rem;
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.banner-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+
+.banner-subtitle {
+  font-size: 1.15rem;
+  color: #cbd5e0;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.banner-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-banner-primary {
+  background-color: #3182ce;
+  color: #ffffff;
+  padding: 0.75rem 1.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.btn-banner-primary:hover {
+  background-color: #2b6cb0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-banner-secondary {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(4px);
+  padding: 0.75rem 1.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.btn-banner-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .hero-banner {
+    min-height: 320px;
+  }
+  .banner-title {
+    font-size: 2rem;
+  }
+  .banner-subtitle {
+    font-size: 1rem;
+  }
+}

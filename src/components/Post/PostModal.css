@@ -1,0 +1,134 @@
+.post-modal-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 520px;
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  padding: 2.25rem 2rem;
+  position: relative;
+  animation: slideUp 0.25s ease-out;
+}
+
+.post-modal-header {
+  margin-bottom: 1.5rem;
+}
+
+.post-modal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 0.35rem;
+}
+
+.post-modal-sub {
+  font-size: 0.88rem;
+  color: #718096;
+}
+
+.post-type-selector {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.type-option {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #4a5568;
+  transition: all 0.2s;
+}
+
+.type-option input {
+  display: none;
+}
+
+.type-option.active {
+  border-color: var(--primary-color);
+  background-color: #ebf8ff;
+  color: var(--primary-color);
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.post-form textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-family: inherit;
+  outline: none;
+  resize: vertical;
+  background-color: #f8fafc;
+  transition: all 0.2s;
+}
+
+.post-form textarea:focus {
+  border-color: var(--primary-color);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.15);
+}
+
+.post-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.btn-cancel {
+  padding: 0.65rem 1.25rem;
+  background-color: #edf2f7;
+  color: #4a5568;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-publish {
+  padding: 0.65rem 1.5rem;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-publish:hover {
+  background-color: var(--primary-hover);
+}
+
+.post-success-message {
+  text-align: center;
+  padding: 2.5rem 1rem;
+}
+
+.post-success-message .success-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.post-success-message h3 {
+  font-size: 1.35rem;
+  color: #2b6cb0;
+  margin-bottom: 0.5rem;
+}
+
+.post-success-message p {
+  color: #718096;
+}
