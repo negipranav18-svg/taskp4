@@ -20,7 +20,6 @@ const Signup = () => {
     e.preventDefault();
     setError('');
 
-    // 1. Data Validation
     if (!name.trim()) {
       setError('Please enter your full name (first and last name).');
       return;
@@ -45,18 +44,15 @@ const Signup = () => {
     setLoading(true);
 
     try {
-      // 2. Encrypt password using bcrypt as strictly mandated by Task P4 requirement
       const saltRounds = 10;
       const hashedPassword = bcrypt.hashSync(password, saltRounds);
 
-      // 3. Register user with Firebase Authentication
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         email.trim().toLowerCase(),
         password
       );
 
-      // 4. Update Firebase Profile with full name
       try {
         await updateProfile(userCredential.user, {
           displayName: name.trim()
@@ -65,7 +61,6 @@ const Signup = () => {
         console.warn('Profile update notice:', profileErr);
       }
 
-      // 5. Store user details with encrypted password in Firestore database (with safety timeout)
       try {
         const firestorePromise = addDoc(collection(db, 'users'), {
           uid: userCredential.user.uid,
@@ -75,7 +70,6 @@ const Signup = () => {
           createdAt: serverTimestamp()
         });
 
-        // 2-second timeout prevents UI freezing if Firestore rules are locked
         const timeoutPromise = new Promise((_, reject) =>
           setTimeout(() => reject(new Error('Firestore timeout')), 2000)
         );
@@ -85,7 +79,6 @@ const Signup = () => {
         console.warn('Firestore write notice (check Firestore rules in console):', firestoreErr.message);
       }
 
-      // 6. Save in local backup for resilience
       try {
         const local = JSON.parse(localStorage.getItem('dev_at_deakin_users') || '[]');
         local.push({
@@ -99,7 +92,6 @@ const Signup = () => {
         console.warn('Local storage save notice:', localErr);
       }
 
-      // 7. Automatically redirect to the Login page as required by Task P4
       navigate('/login', {
         state: { message: 'Account created successfully! Please sign in with your credentials.' }
       });
